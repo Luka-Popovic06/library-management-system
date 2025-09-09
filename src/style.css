@@ -60,3 +60,39 @@ body {
 .wrong-email-password-text {
   color: red;
 }
+.login_info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_info-box {
+  color: rgb(1, 67, 97);
+  background-color: rgb(229, 246, 253);
+  width: 22%;
+  min-height: 110px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 3px;
+}
+.login_info-minibox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.login-p {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 19px;
+  margin-left: 32px;
+  font-size: 14px;
+}
+.icon-2 {
+  width: 22px;
+  height: 22px;
+}
+.hidden {
+  display: none;
+}
