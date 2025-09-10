@@ -101,3 +101,62 @@ body {
   width: 22px;
   height: 22px;
 }
+/*Nav*/
+.nav {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid lightgray;
+  padding: 0px 20px 0px 20px;
+}
+.nav-box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+.icon-3 {
+  width: 32px;
+  height: 32px;
+}
+.lms {
+  font-size: 35px;
+  font-weight: 400;
+}
+.btn {
+  color: rgb(25, 118, 210);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  gap: 10px;
+  padding: 9px;
+  margin-top: 15px;
+  border: none;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: aliceblue;
+}
+.nav-icon {
+  color: rgb(25, 118, 210);
+  width: 20px;
+  height: 20px;
+}
+.nav-icon-1 {
+  width: 20px;
+  height: 20px;
+}
+.logout-btn {
+  border: 1px solid rgb(84, 141, 198);
+  margin-bottom: 20px;
+}
