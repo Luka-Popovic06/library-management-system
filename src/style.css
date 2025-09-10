@@ -203,3 +203,41 @@ body {
   border-radius: 50%;
   color: #fff;
 }
+.books-icon {
+  background-color: purple;
+}
+.memb-icon {
+  background-color: orangered;
+}
+.dashboard-p {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+}
+.number {
+  font-size: 25px;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  gap: 10px;
+  color: blue;
+  transition: 0.2s;
+}
+.button:hover {
+  color: rgb(255, 90, 29);
+}
+.see_all-icon {
+  width: 20px;
+  height: 20px;
+}
+.hidden {
+  display: none;
+}
