@@ -91,3 +91,16 @@ export function updateBooksList(books) {
     );
   });
 }
+export function updateMembersList(members) {
+  domElements.membersList.innerHTML = '';
+  members.forEach(function (member) {
+    createMember(
+      member.getMemberId(),
+      member.getMembershipNo(),
+      member.getName(),
+      member.getPhone(),
+      member.getEmail(),
+      member.getFin()
+    );
+  });
+}
