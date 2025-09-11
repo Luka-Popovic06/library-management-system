@@ -40,3 +40,31 @@ export class LibraryManager {
     return this.book;
   }
 }
+export class Member {
+  constructor(membershipNO, name, phone, email, fine) {
+    this.id = crypto.randomUUID();
+    this.membershipNO = membershipNO;
+    this.name = name;
+    this.phone = phone;
+    this.email = email;
+    this.fine = fine;
+  }
+  getMemberId() {
+    return this.id;
+  }
+  getMembershipNo() {
+    return this.membershipNO;
+  }
+  getName() {
+    return this.name;
+  }
+  getPhone() {
+    return this.phone;
+  }
+  getEmail() {
+    return this.email;
+  }
+  getFin() {
+    return this.fine;
+  }
+}
