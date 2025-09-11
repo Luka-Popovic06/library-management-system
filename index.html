@@ -78,6 +78,7 @@
         </div>
       </div>
     </div>
+    <div class="overlay hidden"></div>
     <div class="container">
       <nav class="nav">
         <div>
@@ -155,7 +156,7 @@
           </button>
         </div>
 
-        <button class="btn logout-btn">
+        <button class="btn logout-btn hidden">
           <span>LOGOUT</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -171,8 +172,13 @@
           </svg>
         </button>
       </nav>
+
+      <!--MAIN-->
+
       <main class="main">
-        <div class="dashboard hidden">
+        <!--DASHBOARD-->
+
+        <div class="dashboard">
           <h1 class="dashboard-h1">Dashboard</h1>
           <div class="dashboard-box">
             <div class="dashboard-minibox">
@@ -199,7 +205,7 @@
                   >
                 </p>
               </div>
-              <button class="button dashboard-see-all-books">
+              <button class="button dashboard-see-all-members">
                 <span>See all members</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -252,9 +258,39 @@
             </div>
           </div>
         </div>
+
+        <!--BOOKS-->
+        <div class="books hidden">
+          <div class="books-box">
+            <h1 class="books-h1">Books</h1>
+            <button class="add-new-book_btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="plas-icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>ADD NEW BOOK</span>
+            </button>
+          </div>
+          <div class="books-info">
+            <p class="p-books">Book ID</p>
+            <p class="p-books">Title</p>
+
+            <p class="p-books">Author</p>
+
+            <p class="p-books">Status</p>
+            <p class="p-books">Actions</p>
+          </div>
+          <ul class="books-list"></ul>
         </div>
       </main>
     </div>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
