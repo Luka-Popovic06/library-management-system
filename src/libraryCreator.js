@@ -68,3 +68,27 @@ export class Member {
     return this.fine;
   }
 }
+export class Book {
+  constructor(bookId, title, author, status) {
+    this.id = crypto.randomUUID();
+    this.bookId = bookId;
+    this.title = title;
+    this.author = author;
+    this.status = status;
+  }
+  getBookId() {
+    return this.id;
+  }
+  getID() {
+    return this.bookId;
+  }
+  getTitle() {
+    return this.title;
+  }
+  getAuthor() {
+    return this.author;
+  }
+  getStatus() {
+    return this.status;
+  }
+}
