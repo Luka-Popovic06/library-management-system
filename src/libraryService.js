@@ -79,3 +79,15 @@ export function createMember(id, membershipNo, name, phone, email, fine) {
   `;
   domElements.membersList.insertAdjacentHTML('beforeend', html);
 }
+export function updateBooksList(books) {
+  domElements.booksList.innerHTML = '';
+  books.forEach(function (book) {
+    createBook(
+      book.getBookId(),
+      book.getID(),
+      book.getTitle(),
+      book.getAuthor(),
+      book.getStatus()
+    );
+  });
+}
