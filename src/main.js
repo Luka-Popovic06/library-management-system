@@ -8,3 +8,5 @@ import { updateBooksList, updateMembersList } from './libraryService.js';
 const manager = new LibraryManager();
 loadDefaultBooks(manager);
 loadDefaultMembers(manager);
+domElements.membersNumber.textContent = manager.getMembers().length;
+domElements.booksNumber.textContent = manager.getBooks().length;
