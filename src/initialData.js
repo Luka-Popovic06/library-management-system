@@ -17,3 +17,25 @@ export function loadDefaultBooks(manager) {
     );
   });
 }
+export function loadDefaultMembers(manager) {
+  if (manager.getMembers().length > 0) return;
+  const membersArray = members;
+  membersArray.forEach(function (member) {
+    const newMember = new Member(
+      member.membershipNo,
+      member.name,
+      member.phone,
+      member.email,
+      member.fine
+    );
+    manager.pushMember(newMember);
+    createMember(
+      newMember.getMemberId(),
+      newMember.getMembershipNo(),
+      newMember.getName(),
+      newMember.getPhone(),
+      newMember.getEmail(),
+      newMember.getFin()
+    );
+  });
+}
