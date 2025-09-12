@@ -1,1 +1,10 @@
 'use strict';
+import './style.css';
+import { domElements } from './dom.js';
+import { LibraryManager } from './libraryCreator.js';
+import { loadDefaultBooks, loadDefaultMembers } from './initialData.js';
+import { updateBooksList, updateMembersList } from './libraryService.js';
+//import { membershipNumbe, name, phone, email, fin } from './input.js';
+const manager = new LibraryManager();
+loadDefaultBooks(manager);
+loadDefaultMembers(manager);
