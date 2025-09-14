@@ -10,3 +10,19 @@ loadDefaultBooks(manager);
 loadDefaultMembers(manager);
 domElements.membersNumber.textContent = manager.getMembers().length;
 domElements.booksNumber.textContent = manager.getBooks().length;
+
+domElements.navigation.addEventListener('click', function (e) {
+  if (e.target.closest('.dashboard-btn')) {
+    domElements.dashboard.classList.remove('hidden');
+    domElements.books.classList.add('hidden');
+    domElements.members.classList.add('hidden');
+  } else if (e.target.closest('.books-btn')) {
+    domElements.dashboard.classList.add('hidden');
+    domElements.books.classList.remove('hidden');
+    domElements.members.classList.add('hidden');
+  } else if (e.target.closest('.members-btn')) {
+    domElements.dashboard.classList.add('hidden');
+    domElements.books.classList.add('hidden');
+    domElements.members.classList.remove('hidden');
+  }
+});
