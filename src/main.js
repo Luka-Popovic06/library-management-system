@@ -26,3 +26,14 @@ domElements.navigation.addEventListener('click', function (e) {
     domElements.members.classList.remove('hidden');
   }
 });
+domElements.dashboard.addEventListener('click', function (e) {
+  if (e.target.closest('.dashboard-see-all-books')) {
+    domElements.dashboard.classList.add('hidden');
+    domElements.books.classList.remove('hidden');
+    domElements.members.classList.add('hidden');
+  } else if (e.target.closest('.dashboard-see-all-members')) {
+    domElements.dashboard.classList.add('hidden');
+    domElements.books.classList.add('hidden');
+    domElements.members.classList.remove('hidden');
+  }
+});
