@@ -37,3 +37,11 @@ domElements.dashboard.addEventListener('click', function (e) {
     domElements.members.classList.remove('hidden');
   }
 });
+domElements.booksList.addEventListener('click', function (e) {
+  if (e.target.closest('.delete-book')) {
+    const li = e.target.closest('.list-item');
+    manager.removeBookById(li.id);
+    updateBooksList(manager.getBooks());
+    domElements.booksNumber.textContent = manager.getBooks().length;
+  }
+});
