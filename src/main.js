@@ -45,3 +45,12 @@ domElements.booksList.addEventListener('click', function (e) {
     domElements.booksNumber.textContent = manager.getBooks().length;
   }
 });
+domElements.membersList.addEventListener('click', function (e) {
+  if (e.target.closest('.delete-member')) {
+    const li = e.target.closest('.list-item');
+    console.log(li);
+    manager.removeMemberById(li.id);
+    updateMembersList(manager.getMembers());
+    domElements.membersNumber.textContent = manager.getMembers().length;
+  }
+});
