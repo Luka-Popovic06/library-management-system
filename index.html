@@ -385,5 +385,57 @@
       </form>
       <!--EDDIT MODE BOOK-->
     </div>
+    <div class="add-member-box hidden">
+      <form class="add-member-form hidden">
+        <h1 class="add-member-h1">Add Member</h1>
+        <input
+          class="add-input membership-no-input"
+          type="text"
+          name="Membership"
+          id="membership-no"
+          required
+          placeholder="Membership No."
+        />
+        <input
+          class="add-input members-name-input"
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Name"
+        />
+        <input
+          class="add-input members-phone-input"
+          type="tel"
+          name="phone"
+          id="phone"
+          required
+          placeholder="Phone"
+        />
+        <input
+          class="add-input members-email-input"
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="Email"
+        />
+        <input
+          class="add-input members-fine_due-input"
+          type="number"
+          name="fine-due"
+          id="fine-due"
+          required
+          placeholder="Fine Due($)"
+        />
+        <button type="submit" class="form-add-btn add-member-btn">
+          ADD MEMBER
+        </button>
+        <button type="button" class="form-cancel-btn cancel-member-btn">
+          CANCEL
+        </button>
+      </form>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
