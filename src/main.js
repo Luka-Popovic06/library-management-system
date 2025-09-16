@@ -1,9 +1,26 @@
 'use strict';
 import './style.css';
 import { domElements } from './dom.js';
-import { LibraryManager } from './libraryCreator.js';
+import { LibraryManager, Book, Member } from './libraryCreator.js';
 import { loadDefaultBooks, loadDefaultMembers } from './initialData.js';
-import { updateBooksList, updateMembersList } from './libraryService.js';
+import {
+  updateBooksList,
+  updateMembersList,
+  createBook,
+  createMember,
+  startBookEdit,
+} from './libraryService.js';
+import {
+  bookIdValue,
+  bookAuthorValue,
+  bookTitleValue,
+  radioInputValue,
+  membershipNoValue,
+  memberNameValue,
+  memberPhoneValue,
+  memberEmailValue,
+  memberFineDueValue,
+} from './input.js';
 //import { membershipNumbe, name, phone, email, fin } from './input.js';
 const manager = new LibraryManager();
 loadDefaultBooks(manager);

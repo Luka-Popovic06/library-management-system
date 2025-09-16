@@ -1,5 +1,17 @@
 import { domElements } from './dom.js';
 import { members, books } from './info.js';
+import {
+  bookIdValue,
+  bookAuthorValue,
+  bookTitleValue,
+  radioInputValue,
+  membershipNoValue,
+  memberNameValue,
+  memberPhoneValue,
+  memberEmailValue,
+  memberFineDueValue,
+} from './input.js';
+
 export function createBook(id, bookId, title, author, status) {
   const html = `
   <li id=${id} class="list-item">

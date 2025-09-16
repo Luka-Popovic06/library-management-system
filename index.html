@@ -35,8 +35,8 @@
           <input
             class="login-input"
             type="email"
-            id="email"
-            name="email"
+            id="email-login"
+            name="email-login"
             required
             placeholder="Email Address"
           />
@@ -45,8 +45,8 @@
           <input
             class="login-input"
             type="password"
-            name="password"
-            id="password"
+            name="password-login"
+            id="password-login"
             required
             placeholder="Password"
           />
@@ -322,6 +322,68 @@
         </div>
       </main>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="add-book-box hidden">
+      <form class="add-book-form hidden">
+        <h1 class="add-book-h1">Add Book</h1>
+        <input
+          class="add-input add-book-id"
+          type="text"
+          id="book-id"
+          name="book id"
+          required
+          placeholder="Book ID"
+        />
+        <input
+          type="text"
+          class="add-input add-book-title"
+          id="title"
+          name="title"
+          required
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          class="add-input add-book-author"
+          required
+          placeholder="Author"
+        />
+        <div class="add-book-form_box">
+          <label for="avaible-issued" class="add-book-form-input"
+            >Status:</label
+          >
+          <div class="input-box">
+            <input
+              type="radio"
+              class="radio-input"
+              name="avaible-issued"
+              value="avaible"
+              id="radio-input"
+              required
+            />
+            <label for="avaible-issued">Avaible</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="radio"
+              class="radio-input"
+              name="avaible-issued"
+              value="Issued"
+              id="avaible-issued"
+              required
+            />
+            <label for="avaible-issued">Issued</label>
+          </div>
+        </div>
+        <button type="submit" class="form-add-btn add-book-btn">
+          ADD BOOK
+        </button>
+        <button type="button" class="form-cancel-btn cancel-book-btn">
+          CANCEL
+        </button>
+      </form>
+      <!--EDDIT MODE BOOK-->
+    </div>
   </body>
 </html>
