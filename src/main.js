@@ -71,3 +71,49 @@ domElements.membersList.addEventListener('click', function (e) {
     domElements.membersNumber.textContent = manager.getMembers().length;
   }
 });
+domElements.main.addEventListener('click', function (e) {
+  if (e.target.closest('.add-new-book_btn')) {
+    domElements.overlay.classList.remove('hidden');
+    domElements.addBookBox.classList.remove('hidden');
+    domElements.addBookForm.classList.remove('hidden');
+    domElements.addBookForm.reset();
+  } else if (e.target.closest('.add-new-member_btn')) {
+    domElements.addMemberBox.classList.remove('hidden');
+    domElements.addMemberForm.classList.remove('hidden');
+    domElements.overlay.classList.remove('hidden');
+    domElements.addMemberForm.reset();
+  }
+});
+domElements.formBookCancel.addEventListener('click', function () {
+  domElements.addBookForm.reset();
+  domElements.overlay.classList.add('hidden');
+  domElements.addBookBox.classList.add('hidden');
+  domElements.addBookForm.classList.add('hidden');
+});
+
+domElements.formMemberCancel.addEventListener('click', function () {
+  domElements.addMemberForm.reset();
+  domElements.addMemberBox.classList.add('hidden');
+  domElements.addMemberForm.classList.add('hidden');
+  domElements.overlay.classList.add('hidden');
+});
+domElements.addBookForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const newBook = new Book(
+    bookIdValue,
+    bookTitleValue,
+    bookAuthorValue,
+    radioInputValue
+  );
+  manager.pushBook(newBook);
+  createBook(
+    newBook.getBookId(),
+    newBook.getID(),
+    newBook.getTitle(),
+    newBook.getAuthor(),
+    newBook.getStatus()
+  );
+  domElements.overlay.classList.add('hidden');
+  domElements.addBookBox.classList.add('hidden');
+  domElements.addBookForm.classList.add('hidden');
+});
