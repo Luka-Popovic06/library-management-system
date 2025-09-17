@@ -11,7 +11,73 @@ import {
   memberEmailValue,
   memberFineDueValue,
 } from './input.js';
+export function startBookEdit() {
+  const html = `<form class="edit-book-form ">
+        <h1 class="add-book-h1">Edit Book</h1>
+        <input
+          class="add-input edit-book-id"
+          type="text"
+          id="book-id-edit"
+          name="book id"
+          required
+          placeholder="Book ID"
+        />
+        <input
+          type="text"
+          class="add-input edit-book-title"
+          id="title-edit"
+          name="title"
+          required
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author-edit"
+          class="add-input edit-book-author"
+          required
+          placeholder="Author"
+        />
+        <div class="add-book-form_box">
+          <label for="avaible-issued" class="add-book-form-input"
+            >Status:</label
+          >
+          <div class="input-box">
+            <input
+              type="radio"
+              class="radio-input-edit"
+              name="avaible-issued"
+              value="avaible"
+              id="radio-input-edit"
+              required
+            />
+            <label for="avaible-issued">Avaible</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="radio"
+              class="radio-input-edit"
+              name="avaible-issued"
+              value="Issued"
+              id="avaible-issued-edit"
+              required
+            />
+            <label for="avaible-issued">Issued</label>
+          </div>
+        </div>
+        <button type="submit" class="form-add-btn edit-book-btn">
+          UPDATE BOOK
+        </button>
+        <button type="button" class="form-cancel-btn cancel-edit-book-btn">
+          CANCEL
+        </button>
+      </form>
+        `;
+  domElements.addBookBox.insertAdjacentHTML('afterbegin', html);
+}
+//export function setupBookInput(selectedForm,){
 
+//}
 export function createBook(id, bookId, title, author, status) {
   const html = `
   <li id=${id} class="list-item">
