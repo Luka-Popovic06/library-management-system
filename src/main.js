@@ -117,3 +117,25 @@ domElements.addBookForm.addEventListener('submit', function (e) {
   domElements.addBookBox.classList.add('hidden');
   domElements.addBookForm.classList.add('hidden');
 });
+domElements.addMemberForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const newMember = new Member(
+    membershipNoValue,
+    memberNameValue,
+    memberPhoneValue,
+    memberEmailValue,
+    memberFineDueValue
+  );
+  manager.pushMember(newMember);
+  createMember(
+    newMember.getMemberId(),
+    newMember.getMembershipNo(),
+    newMember.getName(),
+    newMember.getPhone(),
+    newMember.getEmail(),
+    newMember.getFin()
+  );
+  domElements.addMemberBox.classList.add('hidden');
+  domElements.addMemberForm.classList.add('hidden');
+  domElements.overlay.classList.add('hidden');
+});
