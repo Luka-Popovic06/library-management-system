@@ -49,6 +49,7 @@ export class Member {
     this.email = email;
     this.fine = fine;
   }
+
   getMemberId() {
     return this.id;
   }
@@ -78,6 +79,18 @@ export class Book {
   }
   getBookId() {
     return this.id;
+  }
+  setBookID(newId) {
+    this.bookId = newId;
+  }
+  setBookTitle(newTitle) {
+    this.title = newTitle;
+  }
+  setBookAuthor(newAuthor) {
+    this.author = newAuthor;
+  }
+  setBookStatus(newStatus) {
+    this.status = newStatus;
   }
   getID() {
     return this.bookId;

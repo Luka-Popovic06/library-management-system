@@ -8,7 +8,8 @@ import {
   updateMembersList,
   createBook,
   createMember,
-  startBookEdit,
+  renderBookEditForm,
+  bindBookEditFormEvents,
 } from './libraryService.js';
 import {
   bookIdValue,

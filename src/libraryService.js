@@ -11,8 +11,8 @@ import {
   memberEmailValue,
   memberFineDueValue,
 } from './input.js';
-export function startBookEdit() {
-  const html = `<form class="edit-book-form ">
+export function renderBookEditForm() {
+  const html = `<form class="edit-book-form hidden">
         <h1 class="add-book-h1">Edit Book</h1>
         <input
           class="add-input edit-book-id"
@@ -47,8 +47,8 @@ export function startBookEdit() {
               type="radio"
               class="radio-input-edit"
               name="avaible-issued"
-              value="avaible"
-              id="radio-input-edit"
+              value="Available"
+              id="avaible-edit"
               required
             />
             <label for="avaible-issued">Avaible</label>
@@ -59,7 +59,7 @@ export function startBookEdit() {
               class="radio-input-edit"
               name="avaible-issued"
               value="Issued"
-              id="avaible-issued-edit"
+              id="issued-edit"
               required
             />
             <label for="avaible-issued">Issued</label>
@@ -75,9 +75,7 @@ export function startBookEdit() {
         `;
   domElements.addBookBox.insertAdjacentHTML('afterbegin', html);
 }
-//export function setupBookInput(selectedForm,){
 
-//}
 export function createBook(id, bookId, title, author, status) {
   const html = `
   <li id=${id} class="list-item">
