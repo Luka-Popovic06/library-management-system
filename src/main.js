@@ -61,6 +61,25 @@ domElements.booksList.addEventListener('click', function (e) {
     manager.removeBookById(li.id);
     updateBooksList(manager.getBooks());
     domElements.booksNumber.textContent = manager.getBooks().length;
+  } else if (e.target.closest('.edit-book')) {
+    const li = e.target.closest('.list-item');
+    manager.findBook(li.id);
+    const book = manager.getSelectedBook();
+    console.log();
+    renderBookEditForm();
+    const form = document.querySelector('.edit-book-form');
+    bindBookEditFormEvents(
+      book,
+      form,
+      book.getID(),
+      book.getAuthor(),
+      book.getTitle(),
+      book.getStatus(),
+      manager.getBooks()
+    );
+    domElements.overlay.classList.remove('hidden');
+    domElements.addBookBox.classList.remove('hidden');
+    form.classList.remove('hidden');
   }
 });
 domElements.membersList.addEventListener('click', function (e) {
