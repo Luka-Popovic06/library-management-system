@@ -76,6 +76,18 @@ export function renderBookEditForm() {
   domElements.addBookBox.insertAdjacentHTML('afterbegin', html);
 }
 
+export function applyBookEditChanges(status, form, books, book) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const li = document.getElementById(book.getBookId());
+    const statusEl = li.querySelector('.book-status-p');
+    statusEl.textContent = status;
+    updateBooksList(books);
+    form.classList.add('hidden');
+    domElements.overlay.classList.add('hidden');
+    domElements.addBookBox.classList.add('hidden');
+  });
+}
 export function createBook(id, bookId, title, author, status) {
   const html = `
   <li id=${id} class="list-item">
