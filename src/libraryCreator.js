@@ -49,7 +49,18 @@ export class Member {
     this.email = email;
     this.fine = fine;
   }
-
+  setMemberName(newName) {
+    this.name = newName;
+  }
+  setMemberPhone(newPhone) {
+    this.phone = newPhone;
+  }
+  setMemberEmail(newEmail) {
+    this.email = newEmail;
+  }
+  setMemberFineDue(newFineDue) {
+    this.fine = newFineDue;
+  }
   getMemberId() {
     return this.id;
   }
