@@ -75,7 +75,56 @@ export function renderBookEditForm() {
         `;
   domElements.addBookBox.insertAdjacentHTML('afterbegin', html);
 }
+export function bindBookEditFormEvents(
+  book,
+  selectedForm,
+  id,
+  author,
+  title,
+  status,
+  books
+) {
+  const inputId = selectedForm.querySelector('.edit-book-id');
+  const inputAuthor = selectedForm.querySelector('.edit-book-author');
+  const inputTitle = selectedForm.querySelector('.edit-book-title');
+  const inputAvaible = selectedForm.querySelector('#avaible-edit');
+  const inputIssued = selectedForm.querySelector('#issued-edit');
 
+  let newBookStatus;
+
+  inputId.value = `${id}`;
+  inputAuthor.value = `${author}`;
+  inputTitle.value = `${title}`;
+
+  if (status === 'Available') {
+    inputAvaible.value = status;
+    inputAvaible.checked = true;
+    inputIssued.checked = false;
+  } else if (status === 'Issued') {
+    inputIssued.value = status;
+    inputIssued.checked = true;
+    inputAvaible.checked = false;
+  }
+
+  inputId.addEventListener('input', function (e) {
+    book.setBookID(e.target.value);
+  });
+  inputAuthor.addEventListener('input', function (e) {
+    book.setBookAuthor(e.target.value);
+  });
+  inputTitle.addEventListener('input', function (e) {
+    book.setBookTitle(e.target.value);
+  });
+  inputAvaible.addEventListener('input', function (e) {
+    newBookStatus = e.target.value;
+    book.setBookStatus(e.target.value);
+  });
+  inputIssued.addEventListener('input', function (e) {
+    newBookStatus = e.target.value;
+    book.setBookStatus(e.target.value);
+  });
+  applyBookEditChanges(newBookStatus, selectedForm, books, book);
+}
 export function applyBookEditChanges(status, form, books, book) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
