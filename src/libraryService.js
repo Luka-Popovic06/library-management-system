@@ -241,3 +241,57 @@ export function updateMembersList(members) {
     );
   });
 }
+export function renderMemberEditForm() {
+  const html = `
+  <form class="edit-member-form hidden">
+        <h1 class="add-member-h1">Edit Member</h1>
+        <input
+          class="add-input edit-membership-no-input"
+          type="text"
+          name="Membership"
+          id="membership-no"
+          required
+          placeholder="Membership No."
+        />
+        <input
+          class="add-input edit-members-name-input"
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Name"
+        />
+        <input
+          class="add-input edit-members-phone-input"
+          type="tel"
+          name="phone"
+          id="phone"
+          required
+          placeholder="Phone"
+        />
+        <input
+          class="add-input edit-members-email-input"
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="Email"
+        />
+        <input
+          class="add-input edit-members-fine_due-input"
+          type="number"
+          name="fine-due"
+          id="fine-due"
+          required
+          placeholder="Fine Due($)"
+        />
+        <button type="submit" class="form-add-btn edit-member-btn">
+          UPDATE MEMBER
+        </button>
+        <button type="button" class="form-cancel-btn edit-cancel-member-btn">
+          CANCEL
+        </button>
+      </form>
+  `;
+  domElements.addMemberBox.insertAdjacentHTML('afterbegin', html);
+}
