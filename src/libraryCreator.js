@@ -64,6 +64,9 @@ export class Member {
   getMemberId() {
     return this.id;
   }
+  setMembeshipNo(newNo) {
+    this.membershipNO = newNo;
+  }
   getMembershipNo() {
     return this.membershipNO;
   }

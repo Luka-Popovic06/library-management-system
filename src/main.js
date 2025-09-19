@@ -10,6 +10,8 @@ import {
   createMember,
   renderBookEditForm,
   bindBookEditFormEvents,
+  bindMemberEditFormEvents,
+  renderMemberEditForm,
 } from './libraryService.js';
 import {
   bookIdValue,
@@ -22,7 +24,7 @@ import {
   memberEmailValue,
   memberFineDueValue,
 } from './input.js';
-//import { membershipNumbe, name, phone, email, fin } from './input.js';
+
 const manager = new LibraryManager();
 loadDefaultBooks(manager);
 loadDefaultMembers(manager);
@@ -65,7 +67,6 @@ domElements.booksList.addEventListener('click', function (e) {
     const li = e.target.closest('.list-item');
     manager.findBook(li.id);
     const book = manager.getSelectedBook();
-    console.log();
     renderBookEditForm();
     const form = document.querySelector('.edit-book-form');
     bindBookEditFormEvents(
@@ -89,6 +90,25 @@ domElements.membersList.addEventListener('click', function (e) {
     manager.removeMemberById(li.id);
     updateMembersList(manager.getMembers());
     domElements.membersNumber.textContent = manager.getMembers().length;
+  } else if (e.target.closest('.edit-member')) {
+    const li = e.target.closest('.list-item');
+    manager.findMember(li.id);
+    const member = manager.getSelectedMember();
+    renderMemberEditForm();
+    const form = document.querySelector('.edit-member-form');
+    bindMemberEditFormEvents(
+      member,
+      form,
+      member.getMembershipNo(),
+      member.getName(),
+      member.getPhone(),
+      member.getEmail(),
+      member.getFin(),
+      manager.getMembers()
+    );
+    domElements.overlay.classList.remove('hidden');
+    domElements.addMemberBox.classList.remove('hidden');
+    form.classList.remove('hidden');
   }
 });
 domElements.main.addEventListener('click', function (e) {
