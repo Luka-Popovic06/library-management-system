@@ -334,3 +334,12 @@ export function bindMemberEditFormEvents(
   });
   applyMemberEditChanges(form, members);
 }
+export function applyMemberEditChanges(form, members) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    updateMembersList(members);
+    form.classList.add('hidden');
+    domElements.overlay.classList.add('hidden');
+    domElements.addMemberBox.classList.add('hidden');
+  });
+}
