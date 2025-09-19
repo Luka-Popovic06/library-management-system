@@ -295,3 +295,42 @@ export function renderMemberEditForm() {
   `;
   domElements.addMemberBox.insertAdjacentHTML('afterbegin', html);
 }
+export function bindMemberEditFormEvents(
+  member,
+  form,
+  membershipNO,
+  name,
+  phone,
+  email,
+  fineDue,
+  members
+) {
+  const inputMembershipNO = form.querySelector('.edit-membership-no-input');
+  const inputName = form.querySelector('.edit-members-name-input');
+  const inputPhone = form.querySelector('.edit-members-phone-input');
+  const inputEmail = form.querySelector('.edit-members-email-input');
+  const inputFineDue = form.querySelector('.edit-members-fine_due-input');
+
+  inputMembershipNO.value = `${membershipNO}`;
+  inputName.value = `${name}`;
+  inputPhone.value = `${phone}`;
+  inputEmail.value = `${email}`;
+  inputFineDue.value = `${fineDue}`;
+
+  inputMembershipNO.addEventListener('input', function (e) {
+    member.setMembeshipNo(e.target.value);
+  });
+  inputName.addEventListener('input', function (e) {
+    member.setMemberName(e.target.value);
+  });
+  inputPhone.addEventListener('input', function (e) {
+    member.setMemberPhone(e.target.value);
+  });
+  inputEmail.addEventListener('input', function (e) {
+    member.setMemberEmail(e.target.value);
+  });
+  inputFineDue.addEventListener('input', function (e) {
+    member.setMemberFineDue(e.target.value);
+  });
+  applyMemberEditChanges(form, members);
+}
