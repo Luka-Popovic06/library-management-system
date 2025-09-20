@@ -318,5 +318,29 @@ export function bindMemberEditFormEvents(
   inputFineDue.value = `${fineDue}`;
 
   applyMemberEditChanges(form, members, member);
+
   setupCancelBtn(form, { membershipNO, name, phone, email, fineDue });
+}
+export function applyMemberEditChanges(form, members, member) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const inputMembershipNO = form.querySelector('.edit-membership-no-input');
+    const inputName = form.querySelector('.edit-members-name-input');
+    const inputPhone = form.querySelector('.edit-members-phone-input');
+    const inputEmail = form.querySelector('.edit-members-email-input');
+    const inputFineDue = form.querySelector('.edit-members-fine_due-input');
+
+    member.setMembeshipNo(inputMembershipNO.value);
+    member.setMemberName(inputName.value);
+    member.setMemberPhone(inputPhone.value);
+    member.setMemberEmail(inputEmail.value);
+    member.setMemberFineDue(inputFineDue.value);
+
+    updateMembersList(members);
+
+    form.classList.add('hidden');
+    domElements.overlay.classList.add('hidden');
+    domElements.addMemberBox.classList.add('hidden');
+  });
 }
