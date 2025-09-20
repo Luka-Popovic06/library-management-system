@@ -344,3 +344,21 @@ export function applyMemberEditChanges(form, members, member) {
     domElements.addMemberBox.classList.add('hidden');
   });
 }
+export function setupCancelBtn(form, originalValues) {
+  const cancelBtn = form.querySelector('.edit-cancel-member-btn');
+  cancelBtn.addEventListener('click', function () {
+    form.querySelector('.edit-membership-no-input').value =
+      originalValues.membershipNO;
+    form.querySelector('.edit-members-name-input').value = originalValues.name;
+    form.querySelector('.edit-members-phone-input').value =
+      originalValues.phone;
+    form.querySelector('.edit-members-email-input').value =
+      originalValues.email;
+    form.querySelector('.edit-members-fine_due-input').value =
+      originalValues.fineDue;
+
+    form.classList.add('hidden');
+    domElements.overlay.classList.add('hidden');
+    domElements.addMemberBox.classList.add('hidden');
+  });
+}
