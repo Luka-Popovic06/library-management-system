@@ -317,29 +317,6 @@ export function bindMemberEditFormEvents(
   inputEmail.value = `${email}`;
   inputFineDue.value = `${fineDue}`;
 
-  inputMembershipNO.addEventListener('input', function (e) {
-    member.setMembeshipNo(e.target.value);
-  });
-  inputName.addEventListener('input', function (e) {
-    member.setMemberName(e.target.value);
-  });
-  inputPhone.addEventListener('input', function (e) {
-    member.setMemberPhone(e.target.value);
-  });
-  inputEmail.addEventListener('input', function (e) {
-    member.setMemberEmail(e.target.value);
-  });
-  inputFineDue.addEventListener('input', function (e) {
-    member.setMemberFineDue(e.target.value);
-  });
-  applyMemberEditChanges(form, members);
-}
-export function applyMemberEditChanges(form, members) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    updateMembersList(members);
-    form.classList.add('hidden');
-    domElements.overlay.classList.add('hidden');
-    domElements.addMemberBox.classList.add('hidden');
-  });
+  applyMemberEditChanges(form, members, member);
+  setupCancelBtn(form, { membershipNO, name, phone, email, fineDue });
 }
