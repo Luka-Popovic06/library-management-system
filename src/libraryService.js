@@ -1,16 +1,4 @@
 import { domElements } from './dom.js';
-import { members, books } from './info.js';
-import {
-  bookIdValue,
-  bookAuthorValue,
-  bookTitleValue,
-  radioInputValue,
-  membershipNoValue,
-  memberNameValue,
-  memberPhoneValue,
-  memberEmailValue,
-  memberFineDueValue,
-} from './input.js';
 export function renderBookEditForm() {
   const html = `<form class="edit-book-form hidden">
         <h1 class="add-book-h1">Edit Book</h1>

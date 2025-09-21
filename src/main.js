@@ -179,3 +179,19 @@ domElements.addMemberForm.addEventListener('submit', function (e) {
   domElements.addMemberForm.classList.add('hidden');
   domElements.overlay.classList.add('hidden');
 });
+domElements.loginForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  login();
+});
+
+function login() {
+  const email = domElements.emailLoginInput.value.trim();
+  const password = domElements.passwordLoginInput.value.trim();
+
+  if (email === 'testadmin@library.com' && password === 'testpassword') {
+    domElements.loginContainer.classList.add('hidden');
+    domElements.container.classList.remove('hidden');
+  } else {
+    domElements.wrongAlert.classList.remove('hidden');
+  }
+}

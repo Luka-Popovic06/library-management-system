@@ -1,4 +1,10 @@
 export const domElements = {
+  loginContainer: document.querySelector('.login-container'),
+  emailLoginInput: document.querySelector('#email-login'),
+  passwordLoginInput: document.querySelector('#password-login'),
+  loginForm: document.querySelector('.login-form'),
+  wrongAlert: document.querySelector('.wrong-email-password-text'),
+  container: document.querySelector('.container'),
   navigation: document.querySelector('.nav'),
   overlay: document.querySelector('.overlay'),
   //

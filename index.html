@@ -9,7 +9,7 @@
     </style>
   </head>
   <body>
-    <div class="login-container hidden">
+    <div class="login-container">
       <h1 class="login-h1">Library Management System</h1>
       <div class="admin-login">
         <svg
@@ -30,7 +30,7 @@
         </svg>
         <h2 class="login-h2">Admin Login</h2>
       </div>
-      <form>
+      <form class="login-form">
         <div class="form-box">
           <input
             class="login-input"
@@ -52,7 +52,7 @@
           />
         </div>
         <button class="login-btn" type="submit">LOGIN</button>
-        <p class="wrong-email-password-text">Wrong email or password!</p>
+        <p class="hidden wrong-email-password-text">Wrong email or password!</p>
       </form>
       <div class="login_info-container">
         <div class="login_info-box">
@@ -79,7 +79,7 @@
       </div>
     </div>
     <div class="overlay hidden"></div>
-    <div class="container">
+    <div class="container hidden">
       <nav class="nav">
         <div>
           <div class="nav-box">
@@ -172,12 +172,7 @@
           </svg>
         </button>
       </nav>
-
-      <!--MAIN-->
-
       <main class="main">
-        <!--DASHBOARD-->
-
         <div class="dashboard">
           <h1 class="dashboard-h1">Dashboard</h1>
           <div class="dashboard-box">
@@ -383,7 +378,6 @@
           CANCEL
         </button>
       </form>
-      <!--EDDIT MODE BOOK-->
     </div>
     <div class="add-member-box hidden">
       <form class="add-member-form hidden">
