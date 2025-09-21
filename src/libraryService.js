@@ -138,6 +138,28 @@ export function applyBookEditChanges(form, books, book) {
     domElements.addBookBox.classList.add('hidden');
   });
 }
+export function setupCancelBookBtn(form, originalValues) {
+  const cancelBtn = form.querySelector('.cancel-edit-book-btn');
+  cancelBtn.addEventListener('click', function () {
+    form.querySelector('.edit-book-id').value = originalValues.id;
+    form.querySelector('.edit-book-author').value = originalValues.author;
+    form.querySelector('.edit-book-title').value = originalValues.title;
+    const inputAvaible = form.querySelector('#avaible-edit');
+    const inputIssued = form.querySelector('#issued-edit');
+    if (originalValues.status === 'Available') {
+      inputAvaible.value = originalValues.status;
+      inputAvaible.checked = true;
+      inputIssued.checked = false;
+    } else if (originalValues.status === 'Issued') {
+      inputIssued.value = originalValues.status;
+      inputIssued.checked = true;
+      inputAvaible.checked = false;
+    }
+    form.classList.add('hidden');
+    domElements.overlay.classList.add('hidden');
+    domElements.addBookBox.classList.add('hidden');
+  });
+}
 export function createBook(id, bookId, title, author, status) {
   const html = `
   <li id=${id} class="list-item">
