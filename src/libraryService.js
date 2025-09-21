@@ -90,8 +90,6 @@ export function bindBookEditFormEvents(
   const inputAvaible = selectedForm.querySelector('#avaible-edit');
   const inputIssued = selectedForm.querySelector('#issued-edit');
 
-  let newBookStatus;
-
   inputId.value = `${id}`;
   inputAuthor.value = `${author}`;
   inputTitle.value = `${title}`;
@@ -105,32 +103,35 @@ export function bindBookEditFormEvents(
     inputIssued.checked = true;
     inputAvaible.checked = false;
   }
-
-  inputId.addEventListener('input', function (e) {
-    book.setBookID(e.target.value);
-  });
-  inputAuthor.addEventListener('input', function (e) {
-    book.setBookAuthor(e.target.value);
-  });
-  inputTitle.addEventListener('input', function (e) {
-    book.setBookTitle(e.target.value);
-  });
-  inputAvaible.addEventListener('input', function (e) {
-    newBookStatus = e.target.value;
-    book.setBookStatus(e.target.value);
-  });
-  inputIssued.addEventListener('input', function (e) {
-    newBookStatus = e.target.value;
-    book.setBookStatus(e.target.value);
-  });
-  applyBookEditChanges(newBookStatus, selectedForm, books, book);
+  setupCancelBookBtn(selectedForm, { id, author, title, status });
+  applyBookEditChanges(selectedForm, books, book);
 }
-export function applyBookEditChanges(status, form, books, book) {
+export function applyBookEditChanges(form, books, book) {
+  let status = book.getStatus();
+
+  const inputId = form.querySelector('.edit-book-id');
+  const inputAuthor = form.querySelector('.edit-book-author');
+  const inputTitle = form.querySelector('.edit-book-title');
+  const inputAvaible = form.querySelector('#avaible-edit');
+  const inputIssued = form.querySelector('#issued-edit');
+
+  inputAvaible.addEventListener('change', e => {
+    status = e.target.value;
+  });
+
+  inputIssued.addEventListener('change', e => {
+    status = e.target.value;
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    book.setBookID(inputId.value);
+    book.setBookAuthor(inputAuthor.value);
+    book.setBookTitle(inputTitle.value);
+    book.setBookStatus(status);
+
     const li = document.getElementById(book.getBookId());
     const statusEl = li.querySelector('.book-status-p');
-    statusEl.textContent = status;
+    statusEl.textContent = book.getStatus();
     updateBooksList(books);
     form.classList.add('hidden');
     domElements.overlay.classList.add('hidden');
