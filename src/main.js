@@ -12,6 +12,8 @@ import {
   bindBookEditFormEvents,
   bindMemberEditFormEvents,
   renderMemberEditForm,
+  updateBooksBorder,
+  updateMembersBorder,
 } from './libraryService.js';
 import {
   bookIdValue,
@@ -28,6 +30,7 @@ import {
 const manager = new LibraryManager();
 loadDefaultBooks(manager);
 loadDefaultMembers(manager);
+
 domElements.membersNumber.textContent = manager.getMembers().length;
 domElements.booksNumber.textContent = manager.getBooks().length;
 
@@ -36,14 +39,18 @@ domElements.navigation.addEventListener('click', function (e) {
     domElements.dashboard.classList.remove('hidden');
     domElements.books.classList.add('hidden');
     domElements.members.classList.add('hidden');
+    domElements.dashboard.classList.add('border');
+    domElements.main.classList.remove('border');
   } else if (e.target.closest('.books-btn')) {
     domElements.dashboard.classList.add('hidden');
     domElements.books.classList.remove('hidden');
     domElements.members.classList.add('hidden');
+    updateBooksBorder(manager);
   } else if (e.target.closest('.members-btn')) {
     domElements.dashboard.classList.add('hidden');
     domElements.books.classList.add('hidden');
     domElements.members.classList.remove('hidden');
+    updateMembersBorder(manager);
   }
 });
 domElements.dashboard.addEventListener('click', function (e) {
@@ -51,10 +58,12 @@ domElements.dashboard.addEventListener('click', function (e) {
     domElements.dashboard.classList.add('hidden');
     domElements.books.classList.remove('hidden');
     domElements.members.classList.add('hidden');
+    updateBooksBorder(manager);
   } else if (e.target.closest('.dashboard-see-all-members')) {
     domElements.dashboard.classList.add('hidden');
     domElements.books.classList.add('hidden');
     domElements.members.classList.remove('hidden');
+    updateMembersBorder(manager);
   }
 });
 domElements.booksList.addEventListener('click', function (e) {
@@ -63,6 +72,7 @@ domElements.booksList.addEventListener('click', function (e) {
     manager.removeBookById(li.id);
     updateBooksList(manager.getBooks());
     domElements.booksNumber.textContent = manager.getBooks().length;
+    updateBooksBorder(manager);
   } else if (e.target.closest('.edit-book')) {
     const li = e.target.closest('.list-item');
     manager.findBook(li.id);
@@ -89,6 +99,7 @@ domElements.membersList.addEventListener('click', function (e) {
     console.log(li);
     manager.removeMemberById(li.id);
     updateMembersList(manager.getMembers());
+    updateMembersBorder(manager);
     domElements.membersNumber.textContent = manager.getMembers().length;
   } else if (e.target.closest('.edit-member')) {
     const li = e.target.closest('.list-item');
@@ -117,11 +128,13 @@ domElements.main.addEventListener('click', function (e) {
     domElements.addBookBox.classList.remove('hidden');
     domElements.addBookForm.classList.remove('hidden');
     domElements.addBookForm.reset();
+    updateBooksBorder(manager);
   } else if (e.target.closest('.add-new-member_btn')) {
     domElements.addMemberBox.classList.remove('hidden');
     domElements.addMemberForm.classList.remove('hidden');
     domElements.overlay.classList.remove('hidden');
     domElements.addMemberForm.reset();
+    updateMembersBorder(manager);
   }
 });
 domElements.formBookCancel.addEventListener('click', function () {
