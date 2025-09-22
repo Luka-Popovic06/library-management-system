@@ -373,3 +373,13 @@ export function setupCancelBtn(form, originalValues) {
     domElements.addMemberBox.classList.add('hidden');
   });
 }
+export function updateBooksBorder(manager) {
+  domElements.dashboard.classList.remove('border');
+  if (manager.getBooks().length > 8) {
+    domElements.books.classList.add('border');
+    domElements.main.classList.remove('border');
+  } else {
+    domElements.main.classList.add('border');
+    domElements.books.classList.remove('border');
+  }
+}
