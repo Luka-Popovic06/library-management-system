@@ -593,7 +593,9 @@ body {
 .form-cancel-btn:hover {
   background-color: #dfdede;
 }
-
+.border {
+  border-left: 1px solid lightgray;
+}
 .overlay {
   position: fixed;
   width: 100%;
