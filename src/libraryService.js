@@ -383,3 +383,13 @@ export function updateBooksBorder(manager) {
     domElements.books.classList.remove('border');
   }
 }
+export function updateMembersBorder(manager) {
+  domElements.dashboard.classList.remove('border');
+  if (manager.getMembers().length > 8) {
+    domElements.members.classList.add('border');
+    domElements.main.classList.remove('border');
+  } else {
+    domElements.main.classList.add('border');
+    domElements.members.classList.remove('border');
+  }
+}
