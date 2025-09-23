@@ -53,6 +53,10 @@ domElements.navigation.addEventListener('click', function (e) {
     domElements.books.classList.add('hidden');
     domElements.members.classList.remove('hidden');
     updateMembersBorder(manager);
+  } else if (e.target.closest('.logout-btn')) {
+    domElements.loginForm.reset();
+    domElements.loginContainer.classList.remove('hidden');
+    domElements.container.classList.add('hidden');
   }
 });
 domElements.dashboard.addEventListener('click', function (e) {
