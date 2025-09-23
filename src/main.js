@@ -14,12 +14,14 @@ import {
   renderMemberEditForm,
   updateBooksBorder,
   updateMembersBorder,
+  setStatusColor,
 } from './libraryService.js';
 import {
   bookIdValue,
   bookAuthorValue,
   bookTitleValue,
   radioInputValue,
+  avaibleIssuedInp,
   membershipNoValue,
   memberNameValue,
   memberPhoneValue,
@@ -156,7 +158,7 @@ domElements.addBookForm.addEventListener('submit', function (e) {
     bookIdValue,
     bookTitleValue,
     bookAuthorValue,
-    radioInputValue
+    avaibleIssuedInp
   );
   manager.pushBook(newBook);
   createBook(
@@ -166,6 +168,7 @@ domElements.addBookForm.addEventListener('submit', function (e) {
     newBook.getAuthor(),
     newBook.getStatus()
   );
+  setStatusColor(newBook.getStatus(), newBook.getBookId());
   domElements.overlay.classList.add('hidden');
   domElements.addBookBox.classList.add('hidden');
   domElements.addBookForm.classList.add('hidden');

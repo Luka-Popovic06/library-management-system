@@ -237,6 +237,7 @@ export function updateBooksList(books) {
       book.getAuthor(),
       book.getStatus()
     );
+    setStatusColor(book.getStatus(), book.getBookId());
   });
 }
 export function updateMembersList(members) {
@@ -391,5 +392,15 @@ export function updateMembersBorder(manager) {
   } else {
     domElements.main.classList.add('border');
     domElements.members.classList.remove('border');
+  }
+}
+export function setStatusColor(status, id) {
+  const book = document.getElementById(id);
+  const h1 = book.querySelector('.book-status-p');
+  if (status === 'Available') {
+    h1.style.color = 'green';
+  }
+  if (status === 'Issued') {
+    h1.style.color = 'red';
   }
 }

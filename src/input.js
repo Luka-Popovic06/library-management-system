@@ -3,6 +3,13 @@ export let bookIdValue;
 export let bookAuthorValue;
 export let bookTitleValue;
 export let radioInputValue;
+export let avaibleIssuedInp;
+domElements.avaibleInput.addEventListener('input', function (e) {
+  avaibleIssuedInp = e.target.value;
+});
+domElements.issuedInput.addEventListener('input', function (e) {
+  avaibleIssuedInp = e.target.value;
+});
 domElements.inputAddBookId.addEventListener('input', function (e) {
   bookIdValue = e.target.value;
 });

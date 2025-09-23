@@ -46,6 +46,8 @@ export const domElements = {
   inputAddBookId: document.querySelector('.add-book-id'),
   inputAddBookTitle: document.querySelector('.add-book-title'),
   inputAddBookAuthor: document.querySelector('.add-book-author'),
+  avaibleInput: document.querySelector('#avaibleInp'),
+  issuedInput: document.querySelector('#issuedInp'),
   radioInput: document.querySelector('.radio-input'),
   formAddBookBtn: document.querySelector('.add-book-btn'),
   formBookCancel: document.querySelector('.cancel-book-btn'),

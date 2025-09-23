@@ -1,6 +1,6 @@
 import { domElements } from './dom.js';
 import { books, members } from './info.js';
-import { createBook, createMember } from './libraryService.js';
+import { createBook, createMember, setStatusColor } from './libraryService.js';
 import { Book, Member } from './libraryCreator.js';
 export function loadDefaultBooks(manager) {
   if (manager.getBooks().length > 0) return;
@@ -15,6 +15,7 @@ export function loadDefaultBooks(manager) {
       newBook.getAuthor(),
       newBook.getStatus()
     );
+    setStatusColor(newBook.getStatus(), newBook.getBookId());
   });
 }
 export function loadDefaultMembers(manager) {
