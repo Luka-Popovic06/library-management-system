@@ -36,6 +36,9 @@ domElements.inputMembersName.addEventListener('input', function (e) {
 domElements.inputMembersPhone.addEventListener('input', function (e) {
   memberPhoneValue = e.target.value;
 });
+domElements.inputMembersEmail.addEventListener('input', function (e) {
+  memberEmailValue = e.target.value;
+});
 domElements.inputMembersFineDue.addEventListener('input', function (e) {
   memberFineDueValue = e.target.value;
 });
